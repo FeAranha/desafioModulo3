@@ -80,6 +80,7 @@ export default function Home({}: HomeProps  ) {
            <FiWatch /> 4:20 
          </th>
        </tr>
+       <a>Carregar mais posts</a>
     </div>
     </main>
 
