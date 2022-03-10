@@ -1,1 +1,31 @@
-// TODO
+.contentContainer {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: calc(100vh - 5rem);
+
+    align-items: center;
+    justify-content: space-between;
+
+    h1{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    p{
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    th {
+        display:  inline-block;
+        position: relative;
+        padding: 0 0.5rem;
+        height: 4rem;
+        line-height: 4rem;
+    }
+}
+
+.contentPost{
+    height: 10rem;
+}
