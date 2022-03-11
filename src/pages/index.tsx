@@ -1,4 +1,4 @@
-import { FiCalendar, FiClock, FiUser } from "react-icons/fi";
+import { FiCalendar, FiUser } from "react-icons/fi";
 
 import { GetStaticProps } from 'next';
 import Head from 'next/head'
@@ -46,9 +46,6 @@ export default function Home({}: HomeProps  ) {
          <th> 
            <FiUser /> Felipe Aranha
          </th>
-         <th>
-           <FiClock /> 4:20 
-         </th>
        </tr>
     </div>
     <div className={styles.contentPost}>  
@@ -61,9 +58,6 @@ export default function Home({}: HomeProps  ) {
          <th> 
            <FiUser /> Felipe Aranha
          </th>
-         <th>
-           <FiClock /> 4:15 
-         </th>
        </tr>
     </div>
     <div className={styles.contentPost}>  
@@ -75,9 +69,6 @@ export default function Home({}: HomeProps  ) {
          </th>
          <th> 
            <FiUser /> Felipe Aranha
-         </th>
-         <th>
-           <FiClock /> 4:11 
          </th>
        </tr>
        <a>Carregar mais posts</a>
