@@ -6,9 +6,7 @@
 
     align-items: center;
     justify-content: space-between;
-
-
-}
+ }
 
 .posts {
     margin: 2rem auto 0;
@@ -26,7 +24,7 @@
           display: flex;
           align-items: center;
           color: var(--info);
-          line-height: 3rem; 
+          //line-height: 3rem; 
         }
 
         strong {
@@ -39,15 +37,11 @@
         }
 
         p {
+            color: var(--body);
             margin-top: 0.5rem;
             line-height: 1.625rem;
-            color: var(--body);
-        }
-        th {
-            padding: 0 0.5rem;
-            
-        }
-
+          }
+        
         &:hover strong {
             color: var(--highlight)
         }

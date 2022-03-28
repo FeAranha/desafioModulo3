@@ -15,19 +15,19 @@ import { format } from 'path'
 
 
 interface Post {
-  uid?: string;
-  first_publication_date: string | null;
+  uid?: string
+  first_publication_date: string | null
   data: {
-    title: string;
-    subtitle: string;
-    author: string;
+    title: string
+    subtitle: string
+    author: string
   };
 }
 
 
 interface PostPagination {
-  next_page: string;
-  results: Post[];
+  next_page: string
+  results: Post[]
 }
 
 interface HomeProps {
@@ -39,17 +39,13 @@ export default function Home({ postsPagination }: HomeProps ): JSX.Element {
   const [nextPage, setNextPage] = useState<string | null>(
     postsPagination.next_page
   );
-/*
-  function formatDate(date: string): string {
-    return format(new Date(date), 'dd MMM yyyy', { locale: ptBR })
-  }
-*/  
+
   async function handleSeeMore(): Promise<void> {
     try {
-      const response = await fetch(nextPage);
-      const data = await response.json();
+      const response = await fetch(nextPage)
+      const data = await response.json()
 
-      setNextPage(data.next_page);
+      setNextPage(data.next_page)
 
       const posts: Post[] = data.results.map(
         post =>
@@ -62,11 +58,11 @@ export default function Home({ postsPagination }: HomeProps ): JSX.Element {
             },
             first_publication_date: post.first_publication_date,
           } as Post)
-      );
+      )
 
       setNextPosts(prevState => [...prevState, ...posts]);
     } catch (err) {
-      throw new Error(err);
+      throw new Error(err)
     }
     
   }
@@ -78,20 +74,18 @@ export default function Home({ postsPagination }: HomeProps ): JSX.Element {
     </Head>
 
     <main className={styles.container}>
-      {nextPosts.map(post =>(
-         <a key={post.uid} href="">
-         <strong>{post.data.title}</strong>
-         <p>{post.data.subtitle}</p>
-         <th>
-         <time><FiCalendar /> {post.first_publication_date}</time>
-         </th>
-         <th>
-           <FiUser />{post.data.author}
-         </th>
-        
-      </a>
-      ))}
-
+      <div className={styles.posts}>
+          { nextPosts.map(post =>(
+        //link
+         <a key={post.uid}>
+            <strong>{post.data.title}</strong>
+            <p>subtitulo: {post.data.subtitle}</p>         
+            <time><FiCalendar /> {post.first_publication_date}</time> 
+            <FiUser />{post.data.author}
+         </a>
+        //link 
+      )) }
+      </div>
    {nextPage && (
         <button
           type="button"
@@ -109,7 +103,7 @@ export default function Home({ postsPagination }: HomeProps ): JSX.Element {
 }
 
  export const getStaticProps: GetStaticProps = async () => {
-  const prismic = getPrismicClient();
+  const prismic = getPrismicClient()
   const postsResponse = await prismic.query(
     [Prismic.Predicates.at('document.type', 'posts')],
     {
