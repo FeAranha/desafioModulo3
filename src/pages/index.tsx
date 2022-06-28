@@ -1,8 +1,8 @@
-import { FiCalendar, FiUser } from "react-icons/fi";
+import { FiCalendar, FiUser } from 'react-icons/fi';
 
 import { GetStaticProps } from 'next';
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from 'next/head';
+import Link from 'next/link';
 
 import { getPrismicClient } from '../services/prismic';
 
@@ -28,55 +28,57 @@ interface HomeProps {
   postsPagination: PostPagination;
 }
 
-export default function Home({}: HomeProps  ) {
+export default function Home({}: HomeProps) {
   return (
-  <>
-    <Head>
-      <title>Desafio3 | Home</title>
-    </Head>
+    <>
+      <Head>
+        <title>Desafio3 | Home</title>
+      </Head>
 
-    <main className={styles.contentContainer}>
-    <div className={styles.contentPost}>  
-      <h1>Como utilizar Hooks</h1>
-      <p>Pensando em sincronização em vez de ciclos de vida.</p>
-       <tr>
-         <th>
-           <FiCalendar /> 10 Mar 2022
-         </th>
-         <th> 
-           <FiUser /> Felipe Aranha
-         </th>
-       </tr>
-    </div>
-    <div className={styles.contentPost}>  
-      <h1>Removendo um Hooks</h1>
-      <p>Backup de Hooks, uma forma segura de alterações.</p>
-       <tr>
-         <th>
-           <FiCalendar /> 09 Mar 2022
-         </th>
-         <th> 
-           <FiUser /> Felipe Aranha
-         </th>
-       </tr>
-    </div>
-    <div className={styles.contentPost}>  
-      <h1>Criando um app CRA do zero</h1>
-      <p>Tudo sobre como criar a sua primeira aplicação utilizando Create React App</p>
-       <tr>
-         <th>
-           <FiCalendar /> 08 Mar 2022
-         </th>
-         <th> 
-           <FiUser /> Felipe Aranha
-         </th>
-       </tr>
-       <a>Carregar mais posts</a>
-    </div>
-    </main>
-
-  </>
-  )
+      <main className={styles.contentContainer}>
+        <div className={styles.contentPost}>
+          <h1>Como utilizar Hooks</h1>
+          <p>Pensando em sincronização em vez de ciclos de vida.</p>
+          <tr>
+            <th>
+              <FiCalendar /> 10 Mar 2022
+            </th>
+            <th>
+              <FiUser /> Felipe Aranha
+            </th>
+          </tr>
+        </div>
+        <div className={styles.contentPost}>
+          <h1>Removendo um Hooks</h1>
+          <p>Backup de Hooks, uma forma segura de alterações.</p>
+          <tr>
+            <th>
+              <FiCalendar /> 09 Mar 2022
+            </th>
+            <th>
+              <FiUser /> Felipe Aranha
+            </th>
+          </tr>
+        </div>
+        <div className={styles.contentPost}>
+          <h1>Criando um app CRA do zero</h1>
+          <p>
+            Tudo sobre como criar a sua primeira aplicação utilizando Create
+            React App
+          </p>
+          <tr>
+            <th>
+              <FiCalendar /> 08 Mar 2022
+            </th>
+            <th>
+              <FiUser /> Felipe Aranha
+            </th>
+          </tr>
+          <a>Carregar mais posts</a>
+        </div>
+      </main>
+    </>
+  );
 }
 
 // export const getStaticProps = async () => {
