@@ -1,12 +1,18 @@
-import styles from './header.module.scss'
+import { ReactElement } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './header.module.scss';
 
-export function Header() {
+export default function Header(): ReactElement {
   return (
-
     <header className={styles.headerContainer}>
-     <div  className={styles.headerContent}> 
-      <img src="/logo.svg" alt="logo" />
-     </div>
+      <div className={styles.headerContent}>
+        <Link href="/">
+          <a>
+            <Image src="/logo.svg" alt="logo" width={238} height={25} />
+          </a>
+        </Link>
+      </div>
     </header>
-  )
+  );
 }

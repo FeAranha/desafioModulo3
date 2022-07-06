@@ -1,36 +1,41 @@
-.contentContainer {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    height: calc(100vh - 5rem);
-
-    align-items: center;
-    justify-content: space-between;
-
-    h1{
-        font-size: 2rem;
-        font-weight: bold;
-    }
-
-    p{
-        font-size: 1rem;
-        text-align: justify;
-    }
-
-    th {
-        display:  inline-block;
-        position: relative;
-        padding: 0 0.5rem;
-        height: 4rem;
-        line-height: 4rem;
-    }
-
-    a{
-        line-height: 5rem;
-        color: var(--highlight);
-    }
+.header {
+  max-width: 700px;
+  margin: 80px auto 0;
+  display: flex;
 }
 
-.contentPost{
-    height: 10rem;
+.posts {
+  max-width: 700px;
+  margin: 50px auto;
+
+  ul > a {
+    display: block;
+
+    & + a {
+      margin-top: 50px;
+    }
+
+    transition: filter 0.3s ease;
+    &:hover {
+      filter: brightness(0.5);
+    }
+  }
+
+  button {
+    width: 200px;
+    display: block;
+    margin-right: auto;
+    margin-top: 53px;
+
+    background: transparent;
+    border: none;
+    color: var(--highlight);
+    font-weight: 600;
+    font-size: 1.125rem;
+
+    transition: filter 0.2s ease;
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
 }
