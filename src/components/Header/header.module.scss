@@ -1,10 +1,13 @@
-.headerContent {
+.headerContainer {
+    height: 105px;
     max-width: 1120px;
-    max-height: 105px;
-    height: 8rem;
-    margin: 2rem auto;
-    padding: 0 2rem;
-
+    margin: 0 auto;
+    background-color: var(--background);
     display: flex;
     align-items: center;
-}
+  }
+  
+  .headerContent {
+    margin-left: 200px;
+    cursor: pointer;
+  }
